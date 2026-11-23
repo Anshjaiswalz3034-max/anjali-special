@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>For Anjali ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg:#fff3f7;
+  --text:#694657;
+  --muted:#987888;
+  --pink:#d77d9e;
+  --card:rgba(255,255,255,.78);
+  --border:#f0cbd9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;
+  font-family:Poppins,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 15%,#ffe0ec,transparent 35%),
+    radial-gradient(circle at 85% 80%,#f4ddff,transparent 35%),
+    var(--bg);
+  overflow-x:hidden;
+  transition:.5s;
+}
+body.night{
+  --bg:#171426;
+  --text:#f7e7f2;
+  --muted:#c5aec5;
+  --card:rgba(42,34,59,.88);
+  --border:#55415f;
+  background:
+    radial-gradient(circle at 15% 15%,#382544,transparent 35%),
+    radial-gradient(circle at 85% 80%,#242c50,transparent 35%),
+    #171426;
+}
+button{font-family:inherit;cursor:pointer}
+.topbar{
+  position:fixed;top:12px;right:12px;z-index:50;
+  display:flex;gap:8px
+}
+.tool{
+  border:1px solid var(--border);
+  background:var(--card);color:var(--text);
+  padding:9px 13px;border-radius:30px;font-size:12px
+}
+#progress{
+  position:fixed;top:0;left:0;height:4px;width:0;
+  background:linear-gradient(90deg,#e78bab,#c49bfa);
+  z-index:100;transition:.5s
+}
+.page{
+  display:none;min-height:100vh;padding:85px 20px 45px;
+  align-items:center;justify-content:center;text-align:center
+}
+.page.active{display:flex;animation:appear .8s ease}
+.container{width:100%;max-width:470px}
+@keyframes appear{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.label{
+  color:var(--pink);font-size:10px;letter-spacing:4px;
+  text-transform:uppercase
+}
+h1{
+  font:400 clamp(35px,8vw,49px)/1.3 'Playfair Display',serif;
+  margin:18px 0
+}
+h2{font:400 29px 'Playfair Display',serif;margin:15px 0}
+.script{font-family:'Dancing Script',cursive;color:var(--pink)}
+p{
+  color:var(--muted);font-size:14px;line-height:2;
+  margin:12px auto
+}
+.hero{
+  font-size:76px;margin:22px 0;
+  animation:float 3s ease-in-out infinite
+}
+@keyframes float{50%{transform:translateY(-12px)}}
+.card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:23px;padding:24px 20px;margin:20px 0;
+  box-shadow:0 12px 40px #b86c8a18;
+  backdrop-filter:blur(10px)
+}
+.btn{
+  display:block;width:100%;max-width:310px;margin:10px auto;
+  padding:15px 18px;border:0;border-radius:35px;
+  background:linear-gradient(120deg,#df8eae,#ad72b5);
+  color:white;font-size:13px;font-weight:500;
+  box-shadow:0 7px 22px #c77e9130;transition:.3s
+}
+.btn:active{transform:scale(.97)}
+.btn.secondary{
+  background:transparent;color:var(--pink);
+  border:1px solid var(--pink);box-shadow:none
+}
+.letter{
+  text-align:left;font:22px/1.8 'Dancing Script',cursive;
+  color:var(--text);background:var(--card);
+  border:1px solid var(--border);border-radius:13px;
+  padding:24px 20px
+}
+.envelope{
+  font-size:105px;cursor:pointer;
+  display:inline-block;animation:float 2.5s infinite;
+  filter:drop-shadow(0 8px 12px #d77d9e33)
+}
+.hint{font-size:11px;color:var(--muted);margin-top:12px}
+.heart{font-size:65px;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.particle{
+  position:absolute;bottom:-35px;
+  animation:rise 6s linear forwards
+}
+@keyframes rise{
+  to{transform:translateY(-110vh) rotate(50deg);opacity:0}
+}
+.stars{
+  position:fixed;inset:0;pointer-events:none;opacity:0;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%,#fff 50%,transparent),
+    radial-gradient(2px 2px at 70% 20%,#fff 50%,transparent),
+    radial-gradient(2px 2px at 45% 75%,#fff 50%,transparent),
+    radial-gradient(2px 2px at 85% 65%,#fff 50%,transparent);
+  background-size:190px 190px;transition:.5s
+}
+body.night .stars{opacity:.8}
+.footer{font-size:11px;color:var(--muted);margin-top:30px}
+.reason{font:23px 'Playfair Display',serif;color:var(--pink);min-height:75px;display:grid;place-items:center}
+@media(max-width:480px){.page{padding:85px 20px 35px}.card{padding:21px 16px}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<div class="stars"></div>
+<div id="particles"></div>
+
+<div class="topbar">
+  <button class="tool" onclick="toggleNight()" aria-label="Toggle night mode">🌙 Theme</button>
+  <button class="tool" onclick="toggleMusic()" id="musicButton">🎵 Music: Off</button>
+</div>
+
+<audio id="music" src="music.mp3" loop preload="none"></audio>
+
+<!-- WELCOME -->
+<section class="page active" id="page0">
+ <div class="container">
+  <div class="label">A little surprise for someone special</div>
+  <div class="hero">🌷</div>
+  <h1>Hey <span class="script">Anjali!</span></h1>
+  <p>Kaise ho? Umeed hai tumhare chehre par ek pyari si smile hogi.</p>
+  <p>Maine tumhare liye kuch chhota sa banaya hai. Jab comfortable ho, aaram se dekhna. ❤️</p>
+  <button class="btn" onclick="goTo(1)">Ek surprise hai tumhare liye 💌</button>
+  <div class="footer">Made with sincerity & a little courage</div>
+ </div>
+</section>
+
+<!-- ENVELOPE -->
+<section class="page" id="page1">
+ <div class="container">
+  <div class="label">A little letter for you</div>
+  <h1>Open my <span class="script">letter...</span></h1>
+  <div class="envelope" onclick="openLetter()" role="button" tabindex="0" aria-label="Open letter">💌</div>
+  <p class="hint" id="envelopeHint">Envelope par tap karo ❤️</p>
+  <div id="letterContent" hidden>
+   <div class="letter">
+    Dear Anjali,<br><br>
+    Kabhi-kabhi kisi se baat karna achha lagne lagta hai. Bina kisi khaas wajah ke bhi unki baatein yaad reh jaati hain.<br><br>
+    Aur tumhare saath bhi kuch aisa hi hai.<br><br>
+    Bas socha tumhe bata doon. ❤️
+   </div>
+   <button class="btn" onclick="goTo(2)">Aage padho 🌸</button>
+  </div>
+ </div>
+</section>
+
+<!-- APPRECIATION -->
+<section class="page" id="page2">
+ <div class="container">
+  <div class="label">Something I appreciate</div>
+  <div class="hero">🌸</div>
+  <h1>Tumhari kuch <span class="script">baatein...</span></h1>
+  <div class="card"><div class="reason" id="reason">Tumse baat karke achha lagta hai. ❤️</div></div>
+  <button class="btn" onclick="nextReason()">Ek aur baat 💗</button>
+  <button class="btn secondary" onclick="goTo(3)">Aage chalte hain →</button>
+ </div>
+</section>
+
+<!-- FEELINGS -->
+<section class="page" id="page3">
+ <div class="container">
+  <div class="label">From my heart</div>
+  <div class="hero">❤️</div>
+  <h1>Ek baat <span class="script">sach-sach...</span></h1>
+  <div class="card">
+   <p>Anjali, mujhe tum achhi lagti ho. Main tumhe aur achhe se jaana chahta hoon.</p>
+   <p>Main nahi jaanta ki tum mere baare mein kya sochti ho. Tum par koi pressure ya expectation nahi hai.</p>
+   <p>Bas apni feelings tumhare saamne honestly rakhna chahta tha.</p>
+  </div>
+  <button class="btn" onclick="goTo(4)">Ek aakhri sawaal... 💌</button>
+ </div>
+</section>
+
+<!-- RESPONSE -->
+<section class="page" id="page4">
+ <div class="container">
+  <div class="label">Just one question</div>
+  <div class="heart">💗</div>
+  <h1>Anjali, kya tum...</h1>
+  <p>Kya tum mujhe ek mauka dena chahogi, taaki hum ek-doosre ko aur achhe se jaan sakein aur dekh sakein ki kya humare beech kuch special ho sakta hai?</p>
+  <div class="card">
+   <button class="btn" onclick="choose(5)">Haan, hum try kar sakte hain ❤️</button>
+   <button class="btn secondary" onclick="choose(6)">Mujhe thoda waqt chahiye 🌷</button>
+   <button class="btn secondary" onclick="choose(7)">Main tumhe sirf dost maanti hoon 🤍</button>
+  </div>
+  <p class="hint">Tumhara jo bhi jawab ho, main uski dil se respect karunga.</p>
+ </div>
+</section>
+
+<!-- YES ENDING -->
+<section class="page" id="page5">
+ <div class="container">
+  <div class="hero">🥰</div>
+  <div class="label">A new beginning</div>
+  <h1>Thank you, <span class="script">Anjali!</span></h1>
+  <div class="card">
+   <p>Tumne mujhe ek chance dene ke baare mein socha, ye mere liye bahut special hai.</p>
+   <p>Chalo, bina kisi jaldi ke ek-doosre ko aur achhe se jaante hain.</p>
+   <h2 class="script">One step at a time. ❤️</h2>
+  </div>
+  <p>Thank you for making me smile today. 🌸</p>
+  <button class="btn secondary" onclick="restart()">Dobara dekho ↺</button>
+ </div>
+</section>
+
+<!-- TIME ENDING -->
+<section class="page" id="page6">
+ <div class="container">
+  <div class="hero">🌷</div>
+  <h1>Bilkul, <span class="script">Anjali!</span></h1>
+  <div class="card">
+   <p>Tum apna waqt aaram se lo. Koi jaldi nahi hai.</p>
+   <p>Tumhari comfort aur feelings mere liye important hain.</p>
+   <p>Jab tum comfortable ho, tab baat kar sakte hain.</p>
+  </div>
+  <h2 class="script">Take your time. 🤍</h2>
+  <button class="btn secondary" onclick="restart()">Dobara dekho ↺</button>
+ </div>
+</section>
+
+<!-- FRIENDSHIP ENDING -->
+<section class="page" id="page7">
+ <div class="container">
+  <div class="hero">🤍</div>
+  <h1>Thank you for being honest.</h1>
+  <div class="card">
+   <p>Main tumhari feelings ki respect karta hoon. Hamari dosti mere liye bhi important hai.</p>
+   <p>Koi pressure nahi. Tumhe apna jawab badalne ki zarurat nahi hai.</p>
+   <p>Khush raho, Anjali. 🌸</p>
+  </div>
+  <h2 class="script">Wishing you happiness.</h2>
+  <button class="btn secondary" onclick="restart()">Dobara dekho ↺</button>
+ </div>
+</section>
+
+<script>
+const pages=document.querySelectorAll('.page');
+const progress=document.getElementById('progress');
+const music=document.getElementById('music');
+let reasonIndex=0;
+
+const reasons=[
+ 'Tumse baat karke achha lagta hai. ❤️',
+ 'Tumhara baat karne ka andaaz kaafi achha hai. 🌸',
+ 'Tumhari simplicity mujhe achhi lagti hai. ✨',
+ 'Tumhe aur achhe se jaanne ka mann karta hai. 💗'
+];
+
+function goTo(n){
+ pages.forEach(p=>p.classList.remove('active'));
+ pages[n].classList.add('active');
+ progress.style.width=(n/7*100)+'%';
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function openLetter(){
+ document.getElementById('letterContent').hidden=false;
+ document.getElementById('envelopeHint').textContent='Ek chhoti si baat, dil se... ❤️';
+ document.querySelector('.envelope').textContent='💝';
+ burst(15);
+}
+
+function nextReason(){
+ reasonIndex=(reasonIndex+1)%reasons.length;
+ document.getElementById('reason').textContent=reasons[reasonIndex];
+}
+
+function toggleNight(){
+ document.body.classList.toggle('night');
+}
+
+async function toggleMusic(){
+ const button=document.getElementById('musicButton');
+ if(music.paused){
+  try{
+   await music.play();
+   button.textContent='🎵 Music: On';
+  }catch(e){
+   button.textContent='🎵 Add music.mp3';
+   alert('Pehle website folder mein music.mp3 file add karo.');
+  }
+ }else{
+  music.pause();
+  button.textContent='🎵 Music: Off';
+ }
+}
+
+function burst(count=30){
+ const box=document.getElementById('particles');
+ const symbols=['❤️','💕','💗','🌸','✨','💖'];
+ for(let i=0;i<count;i++){
+  const el=document.createElement('div');
+  el.className='particle';
+  el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left=Math.random()*100+'vw';
+  el.style.fontSize=(15+Math.random()*22)+'px';
+  el.style.animationDelay=(Math.random()*1.5)+'s';
+  box.appendChild(el);
+  setTimeout(()=>el.remove(),6500);
+ }
+}
+
+function choose(n){
+ if(n===5)burst(45);
+ if(n===6)burst(12);
+ if(n===7)burst(12);
+ goTo(n);
+}
+
+function restart(){
+ reasonIndex=0;
+ document.getElementById('reason').textContent=reasons[0];
+ document.getElementById('letterContent').hidden=true;
+ document.querySelector('.envelope').textContent='💌';
+ document.getElementById('envelopeHint').textContent='Envelope par tap karo ❤️';
+ goTo(0);
+}
+</script>
+</body>
+</html>
