@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff5f2">
+<title>For Anjali ❤️ | Ek Chhoti Si Baat</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --pink: #c77e91;
+  --dark-pink: #9c586e;
+  --cream: #fff8f4;
+  --text: #624650;
+  --muted: #927780;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; }
+
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--pink);
+  z-index: 99;
+  transition: width .5s;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 55px 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background:
+    radial-gradient(circle at 15% 15%, #fce8e9 0, transparent 35%),
+    radial-gradient(circle at 85% 85%, #f9e3e7 0, transparent 35%),
+    var(--cream);
+  position: relative;
+}
+
+.page.active {
+  display: flex;
+  animation: appear .7s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 500;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 8vw, 52px);
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 20px 0;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 15px 0;
+}
+
+.script {
+  font-family: 'Dancing Script', cursive;
+  color: var(--pink);
+  font-size: 1.2em;
+}
+
+p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  margin: 12px auto;
+}
+
+.hero-icon {
+  font-size: 75px;
+  margin: 25px 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+.card {
+  background: rgba(255,255,255,.75);
+  border: 1px solid #f0dadd;
+  border-radius: 22px;
+  padding: 25px 20px;
+  width: 100%;
+  margin: 18px 0;
+  box-shadow: 0 12px 35px rgba(166,103,119,.08);
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 310px;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 35px;
+  background: linear-gradient(120deg,#c77e91,#a85d79);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 9px auto;
+  transition: .3s;
+  box-shadow: 0 7px 20px #c77e9130;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #c77e9145;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--dark-pink);
+  border: 1px solid #d6a6b2;
+  box-shadow: none;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #a85d79;
+  outline-offset: 4px;
+}
+
+.letter {
+  background: #fffdfb;
+  border: 1px solid #f0dadd;
+  border-radius: 10px;
+  padding: 25px 20px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  line-height: 1.8;
+  text-align: left;
+  color: #815967;
+}
+
+.flower {
+  font-size: 85px;
+  margin: 18px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.flower:hover { transform: scale(1.15) rotate(10deg); }
+
+.reason {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  color: #a7677d;
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart {
+  font-size: 65px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.15); }
+}
+
+.small {
+  font-size: 11px;
+  color: #b3949d;
+  margin-top: 25px;
+}
+
+.footer {
+  font-size: 11px;
+  color: #b3949d;
+  margin-top: 35px;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+}
+
+#hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -30px;
+  animation: rise 5s linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+@media(max-width:480px) {
+  .page { padding: 45px 22px; }
+  .card { padding: 22px 17px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+<div id="hearts"></div>
+
+<!-- PAGE 1: WELCOME -->
+<section class="page active" id="page0">
+  <div class="container">
+    <div class="label">A little surprise for someone special</div>
+    <div class="hero-icon">🌷</div>
+
+    <h1>Hey <span class="script">Anjali!</span></h1>
+
+    <p>
+      Kaise ho? Umeed hai tumhare chehre par
+      ek pyari si smile hogi.
+    </p>
+
+    <p>
+      Maine tumhare liye kuch chhota sa banaya hai.
+      Ismein kuch dil ki baatein hain.
+    </p>
+
+    <button class="btn" onclick="goTo(1)">
+      Chalo, dekhte hain ❤️
+    </button>
+
+    <div class="footer">Made with a little thought & lots of sincerity</div>
+  </div>
+</section>
+
+<!-- PAGE 2: MESSAGE -->
+<section class="page" id="page1">
+  <div class="container">
+    <div class="label">A small message</div>
+    <div class="hero-icon">💌</div>
+
+    <h1>Ek chhoti si <span class="script">baat...</span></h1>
+
+    <div class="letter">
+      Dear Anjali,<br><br>
+
+      Kabhi-kabhi kisi se baat karna achha
+      lagne lagta hai. Bina kisi khaas wajah
+      ke bhi unki baatein yaad reh jaati hain.<br><br>
+
+      Aur tumhare saath bhi kuch aisa hi hai.<br><br>
+
+      Bas socha tumhe bata doon. ❤️
+    </div>
+
+    <button class="btn" onclick="goTo(2)">
+      Aage padho 🌸
+    </button>
+  </div>
+</section>
+
+<!-- PAGE 3: APPRECIATION -->
+<section class="page" id="page2">
+  <div class="container">
+    <div class="label">Something I appreciate</div>
+    <div class="flower">🌸</div>
+
+    <h1>Tumhari kuch <span class="script">baatein...</span></h1>
+
+    <div class="card">
+      <div class="reason" id="reason">
+        Tumse baat karke achha lagta hai. ❤️
+      </div>
+    </div>
+
+    <button class="btn" onclick="nextReason()">
+      Ek aur baat 💗
+    </button>
+
+    <button class="btn secondary" onclick="goTo(3)">
+      Aage chalte hain →
+    </button>
+
+    <div class="small">Ye bas meri genuine feelings hain.</div>
+  </div>
+</section>
+
+<!-- PAGE 4: HONEST FEELINGS -->
+<section class="page" id="page3">
+  <div class="container">
+    <div class="label">From my heart</div>
+    <div class="hero-icon">❤️</div>
+
+    <h1>Ek baat <span class="script">sach-sach...</span></h1>
+
+    <div class="card">
+      <p>
+        Anjali, mujhe tum achhi lagti ho.
+        Main tumhe aur achhe se jaana chahta hoon.
+      </p>
+
+      <p>
+        Main nahi jaanta ki tum mere baare mein
+        kya sochti ho, aur main tumse kisi tarah
+        ki jaldi ya expectation bhi nahi rakhta.
+      </p>
+
+      <p>
+        Bas apni feelings tumhare saamne
+        honestly rakhna chahta tha.
+      </p>
+    </div>
+
+    <button class="btn" onclick="goTo(4)">
+      Ek aakhri sawaal... 💌
+    </button>
+  </div>
+</section>
+
+<!-- PAGE 5: THE QUESTION -->
+<section class="page" id="page4">
+  <div class="container">
+    <div class="label">Just one question</div>
+
+    <div class="heart">💗</div>
+
+    <h1>Anjali, kya tum...</h1>
+
+    <p>
+      Kya tum mujhe ek mauka dena chahogi,
+      taaki hum ek-doosre ko aur achhe se jaan sakein
+      aur dekh sakein ki kya humare beech kuch
+      special ho sakta hai?
+    </p>
+
+    <div class="choice">
+      <button class="btn" onclick="goTo(5);celebrate()">
+        Haan, hum try kar sakte hain ❤️
+      </button>
+
+      <button class="btn secondary" onclick="goTo(6)">
+        Mujhe thoda waqt chahiye 😊
+      </button>
+
+      <button class="btn secondary" onclick="goTo(7)">
+        Main tumhe sirf dost maanti hoon
+      </button>
+    </div>
+
+    <div class="small">
+      Tumhara jo bhi jawab ho, main uski dil se respect karunga.
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 6: YES -->
+<section class="page" id="page5">
+  <div class="container">
+    <div class="hero-icon">🥰</div>
+
+    <h1>Thank you, <span class="script">Anjali!</span></h1>
+
+    <div class="card">
+      <p>
+        Tumne mujhe ek chance dene ke baare mein
+        socha, ye mere liye bahut special hai.
+      </p>
+
+      <p>
+        Chalo, bina kisi jaldi ke ek-doosre ko
+        aur achhe se jaante hain.
+      </p>
+
+      <h2 class="script">One step at a time. ❤️</h2>
+    </div>
+
+    <button class="btn secondary" onclick="restart()">
+      Dobara dekho ↺
+    </button>
+  </div>
+</section>
+
+<!-- PAGE 7: NEED TIME -->
+<section class="page" id="page6">
+  <div class="container">
+    <div class="hero-icon">🌷</div>
+
+    <h1>Bilkul, <span class="script">Anjali!</span></h1>
+
+    <div class="card">
+      <p>
+        Tum apna waqt aaram se lo.
+        Koi jaldi nahi hai.
+      </p>
+
+      <p>
+        Tumhari comfort aur feelings mere liye
+        important hain.
+      </p>
+
+      <p>
+        Jab tum comfortable ho, tab baat kar sakte hain.
+      </p>
+    </div>
+
+    <button class="btn secondary" onclick="restart()">
+      Dobara dekho ↺
+    </button>
+  </div>
+</section>
+
+<!-- PAGE 8: FRIENDSHIP -->
+<section class="page" id="page7">
+  <div class="container">
+    <div class="hero-icon">🤍</div>
+
+    <h1>Thank you for being honest.</h1>
+
+    <div class="card">
+      <p>
+        Main tumhari feelings ki respect karta hoon.
+        Hamari dosti mere liye bhi important hai.
+      </p>
+
+      <p>
+        Koi pressure nahi. Tumhe apna jawab
+        badalne ki zarurat nahi hai.
+      </p>
+
+      <p>
+        Khush raho, Anjali. 🌸
+      </p>
+    </div>
+
+    <button class="btn secondary" onclick="restart()">
+      Dobara dekho ↺
+    </button>
+  </div>
+</section>
+
+<script>
+const pages = document.querySelectorAll('.page');
+const progress = document.getElementById('progress');
+
+function goTo(number) {
+  pages.forEach(page => page.classList.remove('active'));
+
+  pages[number].classList.add('active');
+
+  progress.style.width = (number / 7 * 100) + '%';
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+function restart() {
+  reasonIndex = 0;
+  document.getElementById('reason').textContent = reasons[0];
+  goTo(0);
+}
+
+const reasons = [
+  'Tumse baat karke achha lagta hai. ❤️',
+  'Tumhara baat karne ka andaaz kaafi achha hai. 🌸',
+  'Tumhari simplicity mujhe achhi lagti hai. ✨',
+  'Tumhe aur achhe se jaanne ka mann karta hai. 💗'
+];
+
+let reasonIndex = 0;
+
+function nextReason() {
+  reasonIndex = (reasonIndex + 1) % reasons.length;
+
+  document.getElementById('reason').textContent =
+    reasons[reasonIndex];
+}
+
+function celebrate() {
+  const heartBox = document.getElementById('hearts');
+
+  for (let i = 0; i < 35; i++) {
+    const heart = document.createElement('div');
+
+    heart.className = 'floating-heart';
+
+    heart.textContent =
+      ['❤️', '💕', '💗', '🌸', '✨'][i % 5];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+    heart.style.animationDelay = Math.random() * 2 + 's';
+
+    heartBox.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6500);
+  }
+}
+</script>
+
+</body>
+</html>
